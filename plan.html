@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 3-Month Plan — Apply SELF × Signature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#043848;--teal-deep:#02262f;--orange:#E9511A;--orange-soft:#f4794a;
+    --cream:#F6FAFC;--mist:#D0E5EF;--ink:#10313c;--muted:#5a7480;--white:#fff;
+    --radius:18px;--shadow:0 18px 50px -22px rgba(4,56,72,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,.brandmark{font-family:'Poppins',sans-serif;line-height:1.15}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:var(--orange)}
+  .accent{color:var(--orange)}
+  a.back{color:#9fc1cd;text-decoration:none;font-size:.85rem;font-family:'Poppins',sans-serif;letter-spacing:.04em}
+  a.back:hover{color:#fff}
+
+  .hero{background:linear-gradient(160deg,var(--teal) 0%,var(--teal-deep) 100%);color:#eaf4f8;padding:60px 0 80px;position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(233,81,26,.22),transparent 65%)}
+  .hero .wrap{position:relative;z-index:2}
+  .sender{display:flex;align-items:center;gap:12px;font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:.04em;color:#bcd6e0;font-size:.92rem;margin-bottom:34px}
+  .sender .dot{width:10px;height:10px;border-radius:50%;background:var(--orange)}
+  .hero h1{font-size:clamp(2.1rem,5vw,3.3rem);font-weight:700;color:#fff;max-width:18ch}
+  .hero h1 em{font-style:normal;color:var(--orange-soft)}
+  .hero .lede{margin-top:20px;font-size:1.15rem;max-width:62ch;color:#cfe3ea}
+
+  section{padding:64px 0}
+  .alt{background:var(--white)}
+  .section-head{max-width:64ch;margin-bottom:38px}
+  .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;color:var(--teal);margin-top:10px}
+  .section-head p{margin-top:14px;color:var(--muted);font-size:1.05rem}
+
+  .lead-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px 38px;border-top:5px solid var(--orange)}
+  .lead-card p{font-size:1.1rem}
+
+  .m3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ms{background:var(--cream);border:1px solid var(--mist);border-radius:var(--radius);padding:26px;position:relative}
+  .ms .tag{font-family:'Poppins',sans-serif;font-weight:700;color:var(--orange);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+  .ms h3{color:var(--teal);font-size:1.18rem;margin:6px 0 4px}
+  .ms .wk{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+  .ms ul{margin:0 0 14px 18px;font-size:.95rem;color:var(--ink)}
+  .ms ul li{margin-bottom:5px}
+  .ms .deliv{font-size:.9rem;color:var(--teal);font-weight:600;border-top:1px solid var(--mist);padding-top:12px}
+
+  .adv{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .adv .item{background:var(--white);border:1px solid var(--mist);border-radius:var(--radius);padding:24px 26px}
+  .adv .item h3{color:var(--teal);font-size:1.06rem;margin-bottom:6px;display:flex;gap:10px;align-items:center}
+  .adv .item h3 .mk{color:var(--orange);font-size:1.2rem}
+  .adv .item p{color:var(--muted);font-size:.96rem}
+
+  table.pay{width:100%;border-collapse:collapse;margin-top:6px}
+  table.pay th,table.pay td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--mist);font-size:.98rem}
+  table.pay th{font-family:'Poppins',sans-serif;color:var(--teal);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+  table.pay td.amt{font-family:'Poppins',sans-serif;font-weight:700;color:var(--orange);text-align:right;white-space:nowrap}
+  table.pay tr.total td{border-bottom:none;font-family:'Poppins',sans-serif;font-weight:700;color:var(--teal);padding-top:14px}
+
+  .band{background:linear-gradient(135deg,var(--orange) 0%,#c8410f 100%);color:#fff;border-radius:24px;padding:42px 44px;box-shadow:var(--shadow)}
+  .band h2{color:#fff;font-size:clamp(1.5rem,3.2vw,2rem)}
+  .band p{margin-top:14px;font-size:1.08rem;color:#ffe7dd;max-width:66ch}
+  .band .pts{margin:18px 0 0 0;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+  .band .pts li{background:rgba(255,255,255,.16);border-radius:30px;padding:7px 16px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.9rem}
+
+  .cta{text-align:center;padding:72px 0 84px}
+  .cta h2{font-size:clamp(1.8rem,4vw,2.4rem);color:var(--teal);max-width:20ch;margin:0 auto}
+  .cta p{margin:16px auto 28px;color:var(--muted);max-width:56ch;font-size:1.05rem}
+  .btn{display:inline-block;background:var(--orange);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;text-decoration:none;padding:14px 32px;border-radius:40px;font-size:1rem;box-shadow:0 14px 30px -12px rgba(233,81,26,.6);transition:transform .2s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--teal);border:2px solid var(--mist);box-shadow:none;margin-left:10px}
+
+  footer{background:var(--teal-deep);color:#8fb2bf;text-align:center;padding:32px 0;font-size:.86rem}
+  footer .brandmark{color:#fff;font-weight:600;letter-spacing:.04em}
+  footer .accentdot{color:var(--orange)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:820px){ .m3,.adv{grid-template-columns:1fr} .band{border-radius:18px} .btn.ghost{margin:12px 0 0 0} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="sender"><span class="dot"></span> Signature Branding &amp; Marketing &nbsp;×&nbsp; Apply SELF &nbsp;·&nbsp; <a class="back" href="index.html">← back to overview</a></div>
+    <div class="eyebrow">The build plan</div>
+    <h1>From your research to a <em>licensable product</em> — in three months.</h1>
+    <p class="lede">A focused plan to build and test the SELF simulation you own 100%, with your Strength Profile as the on-ramp. Prepared after our conversation, for Dr. Dora Sanders.</p>
+  </div>
+</header>
+
+<!-- OBJECTIVE -->
+<section>
+  <div class="wrap">
+    <div class="lead-card reveal">
+      <p>Build a licensable <strong>Signature Product</strong> — an interactive, adaptive SELF leadership simulation — built <span class="accent">institutional-first and modular</span>, so it scales down to early-childhood and faith-based audiences without a rebuild. You keep <strong>100% ownership</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Scope of v1</span>
+      <h2>What we build in the first three months.</h2>
+      <p>Disciplined scope — enough to license and sell, with the rest parked for phase two.</p>
+    </div>
+    <div class="adv">
+      <div class="item reveal"><h3><span class="mk">◆</span> SELF Strength Profile</h3><p>Your assessment, branded and built as the entry point — results personalize each leader's journey.</p></div>
+      <div class="item reveal"><h3><span class="mk">◆</span> Institutional base simulation</h3><p>A complete solo experience teaching the four pillars, with the reflective debrief built in.</p></div>
+      <div class="item reveal"><h3><span class="mk">◆</span> Early-childhood module</h3><p>Your core, most research-grounded context — the first audience path on top of the base.</p></div>
+      <div class="item reveal"><h3><span class="mk">◆</span> Adaptive &amp; language layer</h3><p>Scenarios and language adjust to each leader's context — the differentiator that's uniquely yours.</p></div>
+      <div class="item reveal"><h3><span class="mk">◆</span> Licensing-ready shell</h3><p>Multi-seat structure plus a basic admin dashboard, so an institution can license seats.</p></div>
+      <div class="item reveal"><h3><span class="mk">◆</span> Parked for phase 2</h3><p>Team/multiplayer mode, faith-based &amp; general modules, an in-app pairing tool, and a 20-minute conference preview.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The timeline</span>
+      <h2>Three milestones, about twelve weeks.</h2>
+    </div>
+    <div class="m3">
+      <div class="ms reveal">
+        <div class="tag">Milestone 1</div>
+        <h3>Blueprint &amp; Assessment</h3>
+        <div class="wk">Weeks 1–3</div>
+        <ul>
+          <li>Map the four pillars to scored competencies from your research</li>
+          <li>Build the branded SELF Strength Profile</li>
+          <li>Design the first early-childhood scenario + adaptive logic</li>
+        </ul>
+        <div class="deliv">Deliverable: working assessment + blueprint + one scenario</div>
+      </div>
+      <div class="ms reveal">
+        <div class="tag">Milestone 2</div>
+        <h3>Core Build</h3>
+        <div class="wk">Weeks 4–8</div>
+        <ul>
+          <li>Build the base simulation: decisions, consequences, reflective debrief</li>
+          <li>Wire assessment results → personalized journey</li>
+          <li>Add the early-childhood module + multi-seat shell &amp; dashboard</li>
+        </ul>
+        <div class="deliv">Deliverable: end-to-end playable simulation</div>
+      </div>
+      <div class="ms reveal">
+        <div class="tag">Milestone 3</div>
+        <h3>Adapt, Test &amp; Launch-Prep</h3>
+        <div class="wk">Weeks 9–12</div>
+        <ul>
+          <li>Add the adaptive/language layer; polish UX &amp; reports</li>
+          <li>Pilot with a small cohort of your leaders; iterate</li>
+          <li>Finalize facilitator materials</li>
+        </ul>
+        <div class="deliv">Deliverable: tested, licensable v1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Investment</span>
+      <h2>What it takes — and what you keep.</h2>
+      <p>A build like this runs <b>$50K–$120K and 6–12 months</b> with traditional developers. With our AI-assisted process, here's the proposal.</p>
+    </div>
+    <div class="lead-card reveal">
+      <table class="pay">
+        <tr><th>Milestone</th><th>Trigger</th><th style="text-align:right">Payment</th></tr>
+        <tr><td>1 · Blueprint &amp; Assessment</td><td>Kickoff</td><td class="amt">$3,500</td></tr>
+        <tr><td>2 · Core Build</td><td>Playable end-to-end</td><td class="amt">$3,500</td></tr>
+        <tr><td>3 · Test &amp; Launch-Prep</td><td>Tested v1 delivered</td><td class="amt">$3,000</td></tr>
+        <tr class="total"><td>Total build-out fee</td><td></td><td class="amt">$10,000</td></tr>
+      </table>
+      <p style="margin-top:18px;font-size:1rem;color:var(--ink)"><b class="accent">Partnership:</b> Signature comes on as your marketing partner for <b>20% of revenue we help generate, for 2–3 years</b> — so we're invested in selling it, not just shipping it. <b class="accent">You keep 100% of your IP.</b> One institutional contract typically covers the entire build.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL BRAND -->
+<section>
+  <div class="wrap reveal">
+    <div class="band">
+      <h2>And we amplify you, in parallel.</h2>
+      <p>Alongside the build, we put your authority to work — documenting and amplifying what you're already doing (your Stanford role, your global speaking, your research) into demand for the product. Your credibility is the sales engine; most of it just isn't being seen yet.</p>
+      <ul class="pts">
+        <li>Capture your brand voice</li>
+        <li>Autonomous content</li>
+        <li>Leverage your speaking</li>
+        <li>Turn authority into demand</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE NEED -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">To begin</span>
+      <h2>What we'll need from you.</h2>
+    </div>
+    <div class="adv">
+      <div class="item reveal"><h3><span class="mk">◆</span> Your assessment</h3><p>The existing SELF strength assessment — questions and scoring logic.</p></div>
+      <div class="item reveal"><h3><span class="mk">◆</span> Your research</h3><p>Dissertation and articles — the constructs, scenarios, and examples we build from.</p></div>
+      <div class="item reveal"><h3><span class="mk">◆</span> Real dilemmas</h3><p>3–5 true early-childhood leadership situations to dramatize as scenarios.</p></div>
+      <div class="item reveal"><h3><span class="mk">◆</span> A few pilot leaders</h3><p>Access to a small group to test the experience near the end.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap reveal">
+    <span class="eyebrow">Next step</span>
+    <h2>Let's pick a start date.</h2>
+    <p>Take it in, talk it through, and let's meet early next week to confirm the plan and begin Milestone 1.</p>
+    <a class="btn" href="https://apply-self.com/contact-us">Let's talk →</a>
+    <a class="btn ghost" href="index.html">Revisit the overview</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brandmark">Signature Branding &amp; Marketing <span class="accentdot">●</span> for Apply SELF</div>
+    <div style="margin-top:8px">Prepared for Dr. Dora Sanders · A working plan, not a contract · You retain 100% of your IP.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.14});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
